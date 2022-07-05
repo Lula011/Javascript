@@ -42,7 +42,7 @@ switch (nombreCumplañero) {
 }
 
 function resultadoBusqueda (){
-    return `comparte esta aplicacion para estar al tanto de las fechas importantes`
+    return `comparte esta aplicacion para que todos esten al tanto de las fechas importantes`
     }
     
     console.log(resultadoBusqueda())
