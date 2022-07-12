@@ -1,48 +1,27 @@
-function buscarAmigos (nombre){
-    return `Hola ${nombre}, agrega el nombre de la persona que quieras saber el cumpleños`
+class Corredor {
+    constructor(id, nombre, apodo, nacionalidad, equipos) {
+        this.id = id
+        this.nombre = nombre
+        this.apodo = apodo
+        this.nacionalidad = nacionalidad
+        this.equipos =equipos
     }
-    
-    console.log(buscarAmigos("Lula"))
-
-
-
-let nombreCumplañero, nombre, apellido
-
-do{
-    nombreCumplañero=prompt("ingrese nombre").toLowerCase()
 }
 
+const corredor1 = new Corredor(1, "Juan Manuel Fangio", "El Chueco", "Argentina", [	"Alfa Romeo", "Maserati", "Mercedes", "Ferrari"])
+const corredor2 = new Corredor(2, "Graham Hill", "mister monaco", "britanica", ["Lotus","BRM", "Brabham", "Hill"])
+const corredor3 = new Corredor(3, "Raymond Mays", "mister monaco", "britanica", ["Era","Privé","BRM"])
+const corredor4 = new Corredor(4, "Francisco Sacco Landi", "Chico Landi", "Brasileña", ["Ferrari", "Bandeirantes", "Milano", "Maserati"]) 
+const corredor5 = new Corredor(5, "Joseph Gilles Henri Villeneuve ", "Gilles Villeneuve", "Canadiense", ["McLaren", "Ferrari"])
 
-while(nombreCumplañero == "")
 
-let cumpleañosAmigos
+const corredores = [corredor1, corredor2,corredor3,corredor4,corredor5]
 
-switch (nombreCumplañero) {
-    case "pablo zunino": 
-     alert (`16 de Abril del 2022`)
-     break
-    case "luciana ridao":
-        alert (`11 de Julio del 2022` )
-    break
 
-    case "monica martin":
-    alert (`21 de diciembre del 2022`)
-    break
+console.log(corredores)
 
-    case "agustina ridao":
-        alert (`20 de diciembre del 2022`)
 
-        case "alejandro ridao":
-            alert (`6 de septiembre del 2022`)
+corredores.splice(2,1)
 
-    default:
-        alert(`su nombre es incorrecto`)
 
-       
-}
-
-function resultadoBusqueda (){
-    return `comparte esta aplicacion para que todos esten al tanto de las fechas importantes`
-    }
-    
-    console.log(resultadoBusqueda())
+console.log(corredores)
