@@ -28,18 +28,17 @@ const corredor1 = new Corredor(1, "Juan Manuel Fangio", "El Chueco", "Argentina"
 const corredor2 = new Corredor(2, "Graham Hill", "mister monaco", "britanica", 25, ["Lotus","BRM", "Brabham", "Hill"])
 const corredor3 = new Corredor(3, "Raymond Mays", "Mays", "britanica", 19, ["Era","Privé","BRM"])
 const corredor4 = new Corredor(4, "Francisco Sacco Landi", "Chico Landi", "Brasileña", 20, ["Ferrari", "Bandeirantes", "Milano", "Maserati"]) 
-const corredor5 = new Corredor(5, "Joseph Gilles Henri Villeneuve ", "Gilles Villeneuve", "Canadiense", 27,["McLaren", "Ferrari"])
+const corredor5 = new Corredor(5, "Joseph Gilles Henri Villeneuve ", "Gilles", "Canadiense", 27,["McLaren", "Ferrari"])
 
 
 const corredores = [corredor1, corredor2,corredor3,corredor4,corredor5]
-console.log(corredores)
+console.log(corredores,"El Chueco", "Mister Monaco", "Mays", "Chico Landi","Gilles")
 
 const corredoresFiltrados = corredores.filter( Corredor => Corredor.puntaje <= 20)
 
 corredoresFiltrados.forEach(Corredor => {
     console.log(Corredor)
 })
-
 
 function buscarCorredores (nombre){
     return `Hola ${nombre}, agrega el apodo del corredor que quieras saber si califico`
@@ -75,8 +74,10 @@ switch (nombreCorredor) {
     case "chico landi":
         alert (`califico en 3er puesto`)
 
-        case "gilles villeneuve":
+        case "gilles":
             alert (`califico en 2do puesto`)
+
+            break
 
     default:
         alert(`su nombre es incorrecto`)
