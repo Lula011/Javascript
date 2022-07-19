@@ -25,10 +25,14 @@ class Corredor {
 }
 
 const corredor1 = new Corredor(1, "Juan Manuel Fangio", "El Chueco", "Argentina", 18, [	"Alfa Romeo", "Maserati", "Mercedes", "Ferrari"])
+
 const corredor2 = new Corredor(2, "Graham Hill", "mister monaco", "britanica", 25, ["Lotus","BRM", "Brabham", "Hill"])
-const corredor3 = new Corredor(3, "Raymond Mays", "Mays", "britanica", 19, ["Era","Privé","BRM"])
+
+const corredor3 = new Corredor(3, "Raymond Mays", "Mays", "britanica", 27, ["Era","Privé","BRM"])
+
 const corredor4 = new Corredor(4, "Francisco Sacco Landi", "Chico Landi", "Brasileña", 20, ["Ferrari", "Bandeirantes", "Milano", "Maserati"]) 
-const corredor5 = new Corredor(5, "Joseph Gilles Henri Villeneuve ", "Gilles", "Canadiense", 27,["McLaren", "Ferrari"])
+
+const corredor5 = new Corredor(5, "Joseph Gilles Henri Villeneuve ", "Gilles", "Canadiense", 19,["McLaren", "Ferrari"])
 
 
 const corredores = [corredor1, corredor2,corredor3,corredor4,corredor5]
@@ -90,3 +94,10 @@ function resultadoBusqueda (){
     }
 
     console.log(resultadoBusqueda())
+
+    
+    const corredoresOrden = document.getElementsByClassName ("corredoresOrden")[0, 1].childNodes
+    
+  
+    console.log(corredoresOrden)
+    
