@@ -1,6 +1,13 @@
 
+const input1 = document.getElementById(`input1`)
 
+input1.addEventListener("input", () => {
+    console.log(input1.value)
+})
 
+input1.addEventListener ("change", () =>{
+    console.log(input1.value)
+})
 
 let Cuentaregresiva =10
 
@@ -95,9 +102,7 @@ function resultadoBusqueda (){
 
     console.log(resultadoBusqueda())
 
-    
-    const corredoresOrden = document.getElementsByClassName ("corredoresOrden")[0, 1].childNodes
-    
-  
-    console.log(corredoresOrden)
-    
+
+
+const bontonEnvio = document.getElementById("buscarEnvio")
+

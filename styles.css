@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(7, 94, 75);
+}
+
+h1{color: antiquewhite;
+    background-image: url(https://d45261804a.clvaw-cdnwnd.com/24f0eb2b851b1d380eb76340b2468469/200000095-59bf159bf5/700/pexels-chris-peeters-12801.jpg?ph=d45261804a);
+    background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  height: 400px;
+}
+
+h2{
+    background-color: rgb(32, 24, 24);
+    color: rgb(254, 254, 255);
+}
+
+p{
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+
