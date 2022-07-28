@@ -1,108 +1,66 @@
-
-const input1 = document.getElementById(`input1`)
-
-input1.addEventListener("input", () => {
-    console.log(input1.value)
-})
-
-input1.addEventListener ("change", () =>{
-    console.log(input1.value)
-})
-
-let Cuentaregresiva =10
-
-console.log("comienza la cuenta regresiva para comenzar la clasificación")
-
-while(Cuentaregresiva !=0){
-    console.log("Cuenta Regresiva:"+ Cuentaregresiva + "...")
-    Cuentaregresiva = Cuentaregresiva -=1
-}
-
-console.log("Checkered flags, comienza la carrera!")
-
-class Corredor {
-    constructor(id, nombre, apodo, nacionalidad, puntaje, equipos) {
-        this.id = id
+class Lista {
+    constructor(nombre, precio) {
         this.nombre = nombre
-        this.apodo = apodo
-        this.nacionalidad = nacionalidad
-        this.puntaje = puntaje
-        this.equipos =equipos
+        this.precio = precio
     }
 }
 
-const corredor1 = new Corredor(1, "Juan Manuel Fangio", "El Chueco", "Argentina", 18, [	"Alfa Romeo", "Maserati", "Mercedes", "Ferrari"])
+let listas = []
 
-const corredor2 = new Corredor(2, "Graham Hill", "mister monaco", "britanica", 25, ["Lotus","BRM", "Brabham", "Hill"])
+if (localStorage.getItem("listas")) {
+    listas = JSON.parse(localStorage.getItem("listas"))
+} else {
+    localStorage.setItem("listas", JSON.stringify(listas))
+}
 
-const corredor3 = new Corredor(3, "Raymond Mays", "Mays", "britanica", 27, ["Era","Privé","BRM"])
+const formListas = document.getElementById("formListas")
+const divListas = document.getElementById("divListas")
+const botonCargado = document.getElementById("botonCargado")
 
-const corredor4 = new Corredor(4, "Francisco Sacco Landi", "Chico Landi", "Brasileña", 20, ["Ferrari", "Bandeirantes", "Milano", "Maserati"]) 
+formListas.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log(e.target)
 
-const corredor5 = new Corredor(5, "Joseph Gilles Henri Villeneuve ", "Gilles", "Canadiense", 19,["McLaren", "Ferrari"])
+    let datForm = new FormData(e.target)
 
+    console.log(datForm.get("nombre"), datForm.get("precio"))
 
-const corredores = [corredor1, corredor2,corredor3,corredor4,corredor5]
-console.log(corredores,"El Chueco", "Mister Monaco", "Mays", "Chico Landi","Gilles")
-
-const corredoresFiltrados = corredores.filter( Corredor => Corredor.puntaje <= 20)
-
-corredoresFiltrados.forEach(Corredor => {
-    console.log(Corredor)
+    let lista = new Lista(datForm.get("nombre"), datForm.get("precio"))
+    listas.push(lista)
+    console.log(listas)
+    localStorage.setItem(`listas`, JSON.stringify(listas))
+    formListas.reset()
 })
 
-function buscarCorredores (nombre){
-    return `Hola ${nombre}, agrega el apodo del corredor que quieras saber si califico`
-    }
+botonCargado.addEventListener('click', () => {
+    let arrayStorage = JSON.parse(localStorage.getItem('listas'))
+    
+    divListas.innerHTML = ""
+    
+    arrayStorage.forEach((lista, indice) => {
+       
+        divListas.innerHTML += `
+        <div class="card border-dark mb-3" id="lista${indice}" style="max-width: 20rem; margin:4px;">
+        <div class="card-header"><h2>${lista.nombre}</h2></div>
+        <div class="card-body"><p class="card-title">${lista.precio}</p>
+        <button class="btn btn-danger">Eliminar Producto</button></div></div>`
 
-    console.log(buscarCorredores("Lu"))
+        
+    });
 
+        arrayStorage.forEach((lista, indice) => {
+            let botonCard = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
+           
+            botonCard.addEventListener(`click`, () => {
+                document.getElementById(`lista${indice}`).remove()
 
+                listas.splice(indice,1)
 
-let nombreCorredor, apodo;
+                localStorage.setItem(`listas`, JSON.stringify(listas))
+                console.log(`${lista.nombre} Eliminada`)
 
-do{
-    nombreCorredor=prompt("ingrese el apodo del corredor").toLowerCase()
-}
-
-
-while(nombreCorredor == "")
-
-let carreraF1
-
-switch (nombreCorredor) {
-    case "el chueco": 
-     alert (`Califico en 1er puesto`)
-     break
-    case "mister monaco":
-        alert (`no califico` )
-    break
-
-    case "mays":
-    alert (`no califico`)
-    break
-
-    case "chico landi":
-        alert (`califico en 3er puesto`)
-
-        case "gilles":
-            alert (`califico en 2do puesto`)
-
-            break
-
-    default:
-        alert(`su nombre es incorrecto`)
-
-
-}
-
-function resultadoBusqueda (){
-    return `Gracias por tu busqueda.`
-    }
-
-    console.log(resultadoBusqueda())
-
-
-
-const bontonEnvio = document.getElementById("buscarEnvio")
+            
+        })
+    })
+})
 

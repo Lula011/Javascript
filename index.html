@@ -5,30 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
     <title>Document</title>
 </head>
+<b>
+
+    <h1>Tu lista</h1>
+
+    <p>¡Seguí la cuenta de lo que vas gastando! </p>
+    <p>Agrega el nombre de tu producto y el valor.</p>
+    <!--<b><p>Y AL FINAL LO SUMAMOS</p></b>-->
     
-<body>
-<h1>Carrera F1</h1>
+    <div class="container">
+        <form id="formListas">
+            <div class="mb-3">
+                <label for="nombreLista" class="form-label">Nombre producto</label>
+                <input type="text" class="form-control" id="nombreLista" name="nombre"></div>
+                <div class="mb-3">
+                    <label for="precioLista" class="form-label">Precio del producto</label>
+                    <input type="number" class="form-control" id="precioLista" name="precio"></div>
+                    <button type="submit" class="btn btn-primary">Crear producto</button>
+                </form>
+            </div>
 
-<input type="text" id="input1">
-<button id="botonBusqueda">Buscar</button>
 
 
-<h2>¿Cómo funciona la clasificación de la F1?</h2>
-   <p> La clasificación se utiliza para determinar las posiciones de la parrilla de salida para la carrera del domingo y tradicionalmente tiene lugar un sábado, o un viernes por la tarde durante los fines de semana Sprin.
+            <div class="container">
+                <br><br>
+                <button id="botonCargado" class="btn btn-dark">Mostrar Productos</button>
+                
+                  <div id= "divListas" class="row"></div> <br><br>
+            
+            </div>
 
-    En la sesión todos los pilotos salen a la pista para marcar el tiempo de vuelta más rápido posible en 18 minutos. Los dos pilotos más lentos son eliminados de la sesión y comenzarán la carrera desde su posición final.</p>
-
-    <h2>Corredores en clasificación</h2>
-
-    <p id="primero"> "El Chueco" </p>
-    <p id="segundo"> "Mister Monaco"</p> 
-    <p id="tercero">"Mays"</p>
-    <p id="cuarto">"Chico Landi"</p>
-    <p id="quinto">"Gilles"</p>
-       
-
-    <script src="./script.js"></script>
+            <footer class="bg-light text-center text-lg-start">
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                  © 2020 Copyright:
+                  <a class="text-dark" >LR-LucianaRidao</a>
+                </div>
+                <!-- Copyright -->
+              </footer>
+            <script src="./script.js"></script>
 </body>
 </html>
