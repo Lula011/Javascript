@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,37 +16,39 @@
     <p>¡Seguí la cuenta de lo que vas gastando! </p>
     <p>Agrega el nombre de tu producto y el valor.</p>
     <!--<b><p>Y AL FINAL LO SUMAMOS</p></b>-->
-    
+
     <div class="container">
         <form id="formListas">
+
             <div class="mb-3">
                 <label for="nombreLista" class="form-label">Nombre producto</label>
-                <input type="text" class="form-control" id="nombreLista" name="nombre"></div>
-                <div class="mb-3">
-                    <label for="precioLista" class="form-label">Precio del producto</label>
-                    <input type="number" class="form-control" id="precioLista" name="precio"></div>
-                    <button type="submit" class="btn btn-primary">Crear producto</button>
-                </form>
+                <input type="text" class="form-control" id="nombreLista" name="nombre">
             </div>
 
+            <div class="mb-3">
+                <label for="precioLista" class="form-label">Precio del producto</label>
+                <input type="number" class="form-control" id="precioLista" name="precio"></div>
+            <button type="submit" class="btn btn-primary">Crear producto</button>
+        </form>
+    </div>
 
+    <div class="container">
+        <br><br>
+        <button id="botonCargado" class="btn btn-dark">Mostrar Productos</button>
 
-            <div class="container">
-                <br><br>
-                <button id="botonCargado" class="btn btn-dark">Mostrar Productos</button>
-                
-                  <div id= "divListas" class="row"></div> <br><br>
-            
-            </div>
+        <div id="divListas" class="row"></div> <br><br>
 
-            <footer class="bg-light text-center text-lg-start">
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                  © 2020 Copyright:
-                  <a class="text-dark" >LR-LucianaRidao</a>
-                </div>
-                <!-- Copyright -->
-              </footer>
-            <script src="./script.js"></script>
-</body>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-dark">LR-LucianaRidao</a>
+        </div>
+
+    </footer>
+    <script src="./script.js"></script>
+    </body>
+
 </html>

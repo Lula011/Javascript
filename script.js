@@ -34,33 +34,32 @@ formListas.addEventListener("submit", (e) => {
 
 botonCargado.addEventListener('click', () => {
     let arrayStorage = JSON.parse(localStorage.getItem('listas'))
-    
+
     divListas.innerHTML = ""
-    
+
     arrayStorage.forEach((lista, indice) => {
-       
+
         divListas.innerHTML += `
         <div class="card border-dark mb-3" id="lista${indice}" style="max-width: 20rem; margin:4px;">
         <div class="card-header"><h2>${lista.nombre}</h2></div>
         <div class="card-body"><p class="card-title">${lista.precio}</p>
         <button class="btn btn-danger">Eliminar Producto</button></div></div>`
 
-        
+
     });
 
-        arrayStorage.forEach((lista, indice) => {
-            let botonCard = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
-           
-            botonCard.addEventListener(`click`, () => {
-                document.getElementById(`lista${indice}`).remove()
+    arrayStorage.forEach((lista, indice) => {
+        let botonCard = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
 
-                listas.splice(indice,1)
+        botonCard.addEventListener(`click`, () => {
+            document.getElementById(`lista${indice}`).remove()
 
-                localStorage.setItem(`listas`, JSON.stringify(listas))
-                console.log(`${lista.nombre} Eliminada`)
+            listas.splice(indice, 1)
 
-            
+            localStorage.setItem(`listas`, JSON.stringify(listas))
+            console.log(`${lista.nombre} Eliminada`)
+
+
         })
     })
 })
-
