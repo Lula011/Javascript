@@ -61,5 +61,14 @@ botonCargado.addEventListener('click', () => {
 
 
         })
+
+        botonCard.addEventListener(`click`, () => {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Borrado',
+                text: 'Se eliminara el producto!',
+            })
+        })
     })
+
 })
