@@ -2,6 +2,7 @@ class Lista {
     constructor(nombre, precio) {
         this.nombre = nombre
         this.precio = precio
+
     }
 }
 
@@ -16,6 +17,7 @@ if (localStorage.getItem("listas")) {
 const formListas = document.getElementById("formListas")
 const divListas = document.getElementById("divListas")
 const botonCargado = document.getElementById("botonCargado")
+
 
 formListas.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -32,6 +34,8 @@ formListas.addEventListener("submit", (e) => {
     formListas.reset()
 })
 
+
+
 botonCargado.addEventListener('click', () => {
     let arrayStorage = JSON.parse(localStorage.getItem('listas'))
 
@@ -40,18 +44,22 @@ botonCargado.addEventListener('click', () => {
     arrayStorage.forEach((lista, indice) => {
 
         divListas.innerHTML += `
-        <div class="card border-dark mb-3" id="lista${indice}" style="max-width: 20rem; margin:4px;">
-        <div class="card-header"><h2>${lista.nombre}</h2></div>
-        <div class="card-body"><p class="card-title">${lista.precio}</p>
-        <button class="btn btn-danger">Eliminar Producto</button></div></div>`
-
+       
+        
+         <div class="list-group" id ="lista${indice}">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ${lista.nombre}<span class="badge bg-primary rounded-pill"> $${lista.precio}</span>
+                 <div class="list-group"><button class="btn btn-danger">Eliminar Producto</button></div>
+            </li>
+        </div>`
 
     });
 
-    arrayStorage.forEach((lista, indice) => {
-        let botonCard = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
 
-        botonCard.addEventListener(`click`, () => {
+    arrayStorage.forEach((lista, indice) => {
+        let botonList = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
+
+        botonList.addEventListener(`click`, () => {
             document.getElementById(`lista${indice}`).remove()
 
             listas.splice(indice, 1)
@@ -62,13 +70,24 @@ botonCargado.addEventListener('click', () => {
 
         })
 
-        botonCard.addEventListener(`click`, () => {
+        botonList.addEventListener(`click`, () => {
             Swal.fire({
                 icon: 'warning',
                 title: 'Borrado',
-                text: 'Se eliminara el producto!',
+                text: 'Se elimino el producto!',
             })
         })
     })
 
 })
+
+let totalProd = '';
+let i = 0;
+
+do {
+    i = i + 1;
+    result = result + i;
+} while (i < 5);
+
+console.log(result);
+// expected result: "12345"
