@@ -14,7 +14,7 @@ if (localStorage.getItem("listas")) {
     localStorage.setItem("listas", JSON.stringify(listas))
 }
 
-const formListas = document.getElementById("formListas").value
+const formListas = document.getElementById("formListas")
 const divListas = document.getElementById("divListas")
 const botonCargado = document.getElementById("botonCargado")
 
