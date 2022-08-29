@@ -14,7 +14,7 @@ if (localStorage.getItem("listas")) {
     localStorage.setItem("listas", JSON.stringify(listas))
 }
 
-const formListas = document.getElementById("formListas")
+const formListas = document.getElementById("formListas").value
 const divListas = document.getElementById("divListas")
 const botonCargado = document.getElementById("botonCargado")
 
@@ -75,19 +75,11 @@ botonCargado.addEventListener('click', () => {
                 icon: 'warning',
                 title: 'Borrado',
                 text: 'Se elimino el producto!',
+
+
             })
+
         })
+
     })
-
 })
-
-let totalProd = '';
-let i = 0;
-
-do {
-    i = i + 1;
-    result = result + i;
-} while (i < 5);
-
-console.log(result);
-// expected result: "12345"
