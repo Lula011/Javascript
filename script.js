@@ -1,3 +1,5 @@
+
+
 class Lista {
     constructor(nombre, precio) {
         this.nombre = nombre
@@ -35,7 +37,7 @@ formListas.addEventListener("submit", (e) => {
 })
 
 
-
+//carga de productos 
 botonCargado.addEventListener('click', () => {
     let arrayStorage = JSON.parse(localStorage.getItem('listas'))
 
@@ -55,7 +57,7 @@ botonCargado.addEventListener('click', () => {
 
     });
 
-
+    
     arrayStorage.forEach((lista, indice) => {
         let botonList = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
 
@@ -69,7 +71,7 @@ botonCargado.addEventListener('click', () => {
 
 
         })
-
+        //Alerta de producto "Eliminado"
         botonList.addEventListener(`click`, () => {
             Swal.fire({
                 icon: 'warning',

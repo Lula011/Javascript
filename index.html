@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
-    <title>Document</title>
+    <title>TusCompras</title>
 </head>
 <b>
 
-    <h1>Tu lista</h1>
+    <h1>Tu lista de compras</h1>
 
     <p>¡Seguí la cuenta de lo que vas gastando! </p>
-    <p>Agrega el nombre de tu producto y el valor.</p>
-    <!--<b><p>Y AL FINAL LO SUMAMOS</p></b>-->
-
+    <p>Agrega el nombre del producto y el valor.</p>
+    
+    <!--formulario -->
     <div class="container">
         <form id="formListas">
 
@@ -29,7 +29,7 @@
 
                 <label for="precioLista" class="form-label" >Precio del producto</label>
                 <input type="number" class="form-control" id="precioLista" name="precio" required></div>
-
+<!--botón enter-->
                 <button type="submit" class="btn btn-primary">Crear producto</button>
 
         </form>
@@ -37,23 +37,12 @@
 
     <div class="container">
         <br><br>
+        
         <button id="botonCargado" class="btn btn-dark">Mostrar Productos</button>
 
         <div id="divListas" class="row"></div> <br><br>
-
-     
-        <span>TOTAL </span>
-
-        
-<div id="resultado4"><input id="Subtotal" type="text" disabled> SUBTOTAL</div>
-   
-<br/>
-
-
-        
-
-       
     </div>
+
 
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
@@ -63,6 +52,8 @@
         </div>
 
     </footer>
+
+    <!--enlaces JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
     <script src="./script.js"></script>
     </body>
