@@ -1,16 +1,38 @@
 body{
     padding: 10%;
     margin: 5%;
+    border:solid black  50px;
+}
+
+.userData{
+    margin-bottom: 20px;
+    padding: 20px;
+    color: rgb(4, 13, 65);
 }
 
 h1{
     text-decoration:underline;
     margin-left: 5%;
+    padding-bottom: 20px;
     text-align: center;
+    color: rgb(58, 15, 97);
+    text-shadow: 3px 3px 1px rgb(209, 144, 4),
+    5px 5px 2px rgb(139, 37, 122);
 }
 
-p{
+p{  
+    
     margin-left: 5%;
     text-align: center;
     color: rgb(199, 187, 172);
+}
+
+.container{
+    margin-top: 50px;
+
+}
+
+.row {
+      font-size: 20px;
+      
 }

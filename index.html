@@ -7,55 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+           
     <title>TusCompras</title>
 </head>
 <b>
-
-    <h1>Tu lista de compras</h1>
-
-    <p>¡Seguí la cuenta de lo que vas gastando! </p>
-    <p>Agrega el nombre del producto y el valor.</p>
-    
-    <!--formulario -->
-    <div class="container">
-        <form id="formListas">
-
-            <div class="mb-3">
-                <label for="nombreLista" class="form-label">Nombre producto</label>
-                <input type="text" class="form-control" id="nombreLista" name="nombre" required>
-            </div>
-
-            <div class="mb-3">
-
-                <label for="precioLista" class="form-label" >Precio del producto</label>
-                <input type="number" class="form-control" id="precioLista" name="precio" required></div>
-<!--botón enter-->
-                <button type="submit" class="btn btn-primary">Crear producto</button>
-
-        </form>
-    </div>
-
-    <div class="container">
-        <br><br>
+    <!--fecha-->
+    <div class="perfil">
         
-        <button id="botonCargado" class="btn btn-dark">Mostrar Productos</button>
-
-        <div id="divListas" class="row"></div> <br><br>
-    </div>
-
-
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-dark">LR-LucianaRidao</a>
+        <div class="userData">
+            <div id="fecha"></div>
+            <div id="userip"></div>
         </div>
 
-    </footer>
+        <h1>Tu lista de compras</h1>
 
-    <!--enlaces JS-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
-    <script src="./script.js"></script>
-    </body>
+        <p>¡Seguí la cuenta de lo que vas gastando! </p>
+        <p>Agrega el nombre del producto y el valor.</p>
+
+        <!--formulario -->
+        <div class="container">
+            <form id="formListas">
+
+                <div class="mb-3">
+                    <label for="nombreLista" class="form-label">Nombre producto</label>
+                    <input type="text" class="form-control" id="nombreLista" name="nombre" required>
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="precioLista" class="form-label">Precio del producto</label>
+                    <input type="number" class="form-control" id="precioLista" name="precio" required></div>
+                <!--botón enter-->
+                <button type="submit" class="btn btn-primary">Crear producto</button>
+
+            </form>
+        </div>
+
+        <div class="container">
+            <button id="botonCargado" class="btn btn-primary">Mostrar Productos</button> <br><br>
+
+            <div id="divListas" class="row"></div> <br><br>
+        </div>
+
+
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark">LR-LucianaRidao</a>
+            </div>
+
+        </footer>
+
+        <!--enlaces JS-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
+        <script src="./script.js"></script>
+        </body>
 
 </html>

@@ -1,4 +1,11 @@
 
+const fecha = document.querySelector('#fecha')
+
+
+// creacion de fecha
+const FECHA = new Date()
+fecha.innerHTML = `${FECHA.toLocaleDateString('es-MX', { weekday: 'long', month: 'long', day: 'numeric' })}.`
+
 
 class Lista {
     constructor(nombre, precio) {
@@ -31,7 +38,7 @@ formListas.addEventListener("submit", (e) => {
 
     let lista = new Lista(datForm.get("nombre"), datForm.get("precio"))
     listas.push(lista)
-    console.log(listas)
+
     localStorage.setItem(`listas`, JSON.stringify(listas))
     formListas.reset()
 })
@@ -48,16 +55,16 @@ botonCargado.addEventListener('click', () => {
         divListas.innerHTML += `
        
         
-         <div class="list-group" id ="lista${indice}">
+         <div class="list-group" id="lista${indice}">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                ${lista.nombre}<span class="badge bg-primary rounded-pill"> $${lista.precio}</span>
+                ${lista.nombre}<span class="badge bg-dark rounded w-10 p-2"> $${lista.precio}</span>
                  <div class="list-group"><button class="btn btn-danger">Eliminar Producto</button></div>
             </li>
         </div>`
 
     });
 
-    
+
     arrayStorage.forEach((lista, indice) => {
         let botonList = document.getElementById(`lista${indice}`).lastElementChild.lastElementChild
 
@@ -67,10 +74,9 @@ botonCargado.addEventListener('click', () => {
             listas.splice(indice, 1)
 
             localStorage.setItem(`listas`, JSON.stringify(listas))
-            console.log(`${lista.nombre} Eliminada`)
-
 
         })
+
         //Alerta de producto "Eliminado"
         botonList.addEventListener(`click`, () => {
             Swal.fire({
